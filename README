@@ -1,6 +1,10 @@
 A command line tool to start Python virtual environments faster and easier.
 
 Installation:
+pip install pyquickenv
+
+or
+
 git clone https://pizzapanther@github.com/pizzapanther/Python-Quick-Env.git
 cd Python-Quick-Env
 sudo python setup.py install
