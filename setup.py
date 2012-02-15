@@ -13,7 +13,7 @@ setup(
     packages = ['pyquickenv'],
     entry_points = {
         "console_scripts": [
-            "untracked = pyquickenv.__main__:main",
+            "pyquickenv = pyquickenv.__main__:main",
         ],
     },
 )

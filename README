@@ -9,7 +9,7 @@ First, define your environments in ~/.pyenv.json:
 ***Note, the "cd" attribute is optional***
 
 Next, add the following to your .bashrc:
-pyenv() { eval $(/usr/bin/pyquickenv "$@") }
+pyenv() { eval $(pyquickenv "$@") }
 
 Usage:
 pyenv proj1

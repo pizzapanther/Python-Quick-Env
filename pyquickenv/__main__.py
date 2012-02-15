@@ -12,8 +12,9 @@ def main ():
   config = json.loads(j)
   
   if sys.argv[1] in config.keys():
-    env = os.path.join(config[sys.argv[1]], 'bin', 'activate')
-    cmd = "source  %s" % env
+    env = config[sys.argv[1]]
+    venv = os.path.join(env['env'], 'bin', 'activate')
+    cmd = "source  %s" % venv
     if env.has_key('cd') and env['cd']:
       cmd += '; cd ' + env['cd']
       
