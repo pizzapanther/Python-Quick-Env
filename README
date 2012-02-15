@@ -1,6 +1,11 @@
 A command line tool to start Python virtual environments faster and easier.
 
-First, define your environments in ~/.pyenv.json:
+Installation:
+git clone https://pizzapanther@github.com/pizzapanther/Python-Quick-Env.git
+cd Python-Quick-Env
+sudo python setup.py install
+
+Now, define your environments in ~/.pyenv.json:
 {                                                                                                                                            
   "proj1": {"env": "/home/user/ENVs/project1", "cd": "/home/user/git/project1"},
   "proj2": {"env": "/home/user/ENVs/project2", "cd": "/home/user/git/project2"}
