@@ -6,6 +6,7 @@ First, define your environments in ~/.pyenv.json:
   "proj2": {"env": "/home/user/ENVs/project2", "cd": "/home/user/git/project2"}
 }
 
+***Note, the "cd" attribute is optional***
 
 Next, add the following to your .bashrc:
 pyenv() { eval $(/usr/bin/pyquickenv "$@") }
