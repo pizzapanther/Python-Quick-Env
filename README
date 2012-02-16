@@ -5,7 +5,7 @@ pip install pyquickenv
 
 or
 
-git clone https://pizzapanther@github.com/pizzapanther/Python-Quick-Env.git
+git clone https://github.com/pizzapanther/Python-Quick-Env.git
 cd Python-Quick-Env
 sudo python setup.py install
 
