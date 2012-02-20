@@ -12,7 +12,7 @@ def main ():
   config = json.loads(j)
   cmd = None
   
-  if os.environ.has_key('VIRTUAL_ENV'):
+  if len(sys.argv) == 1 and os.environ.has_key('VIRTUAL_ENV'):
     env_path = os.environ['VIRTUAL_ENV']
     for key, env in config.items():
       if env['env'] == env_path:
@@ -32,4 +32,7 @@ def main ():
         
   if cmd:
     print cmd
+    
+  else:
+    print "echo Invalid environment or command."
     
