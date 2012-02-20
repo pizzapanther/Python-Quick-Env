@@ -1,0 +1,4 @@
+Version 1.0.2
+
+- New Features
+  * Typing pyenv when in virtual env takes you to project home.
