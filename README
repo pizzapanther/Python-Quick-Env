@@ -18,7 +18,9 @@ Now, define your environments in ~/.pyenv.json:
 ***Note, the "cd" attribute is optional***
 
 Next, add the following to your .bashrc:
-pyenv() { eval $(pyquickenv "$@") }
+pyenv() {
+  eval $(pyquickenv "$@")
+}
 
 Usage:
 pyenv proj1
@@ -26,3 +28,9 @@ pyenv proj1
 The command above executes:
 1. source /home/user/ENVs/project1/bin/activate
 2. cd /home/user/git/project2
+
+Once in a virtual env you can type:
+pyenv
+
+This executes:
+cd /home/user/git/project2
