@@ -1,36 +1,36 @@
 A command line tool to start Python virtual environments faster and easier.
 
 Installation:
-pip install pyquickenv
-
-or
-
-git clone https://github.com/pizzapanther/Python-Quick-Env.git
-cd Python-Quick-Env
-sudo python setup.py install
-
-Now, define your environments in ~/.pyenv.json:
-{                                                                                                                                            
-  "proj1": {"env": "/home/user/ENVs/project1", "cd": "/home/user/git/project1"},
-  "proj2": {"env": "/home/user/ENVs/project2", "cd": "/home/user/git/project2"}
-}
-
-***Note, the "cd" attribute is optional***
+sudo pip install pyquickenv
 
 Next, add the following to your .bashrc:
 pyenv() {
   eval $(pyquickenv "$@")
 }
 
-Usage:
+Add An Environment:
+pyenv add proj1 /home/user/git/proj1_path
+*** Last argument is your project home directory and is optional ***
+
+Activate Environment:
 pyenv proj1
 
-The command above executes:
-1. source /home/user/ENVs/project1/bin/activate
-2. cd /home/user/git/project2
+The command "pyenv proj1" executes:
+1. source /home/user/pyenv/proj1/bin/activate
+2. cd /home/user/git/proj1_path
 
 Once in a virtual env you can type:
 pyenv
 
 This executes:
-cd /home/user/git/project2
+cd /home/user/git/proj1_path
+
+To add projects manually that are not added via "pyenv add" edit the file:
+/home/user/.pyenv.json
+
+Sample JSON file, note "cd" is optional:
+{                                                                                                                                            
+  "proj1": {"env": "/home/user/ENVs/project1", "cd": "/home/user/git/project1"},
+  "proj2": {"env": "/home/user/ENVs/project2", "cd": "/home/user/git/project2"}
+}
+
