@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python -u
 
 import os
 import sys
@@ -44,10 +44,14 @@ def main ():
           os.mkdir(envdir)
           
         venvdir = os.path.join(envdir, sys.argv[2])
-        cmd = 'virtualenv "%s"' % venvdir
-        
+        if '--system' in sys.argv:
+          cmd = 'virtualenv --system-site-packages "%s"' % venvdir
+          
+        else:
+          cmd = 'virtualenv "%s"' % venvdir
+          
         config[sys.argv[2]] = {'env': venvdir}
-        if len(sys.argv) > 3:
+        if len(sys.argv) > 3 and sys.argv[3] != '--system':
           config[sys.argv[2]]['cd'] = sys.argv[3]
           
         save_config(config)
