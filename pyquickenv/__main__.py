@@ -38,9 +38,12 @@ def main ():
       
   if not cmd:
     if len(sys.argv) > 1:
-      if sys.argv[1] == 'list':
+      if sys.argv[1] in ('list', 'ls'):
         sys.stdout.write("echo -e \"Listing Environments\\n")
-        for key, env in config.items():
+        keys = config.keys()
+        keys.sort()
+        for key in keys:
+          env = config[key]
           sys.stdout.write('%s\\n' % key)
           sys.stdout.write("  Env Dir: %s\\n" % env['env'])
           if env.has_key('cd') and env['cd']:
