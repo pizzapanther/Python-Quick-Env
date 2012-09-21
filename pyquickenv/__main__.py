@@ -38,7 +38,20 @@ def main ():
       
   if not cmd:
     if len(sys.argv) > 1:
-      if sys.argv[1] == 'add' and len(sys.argv) > 2:
+      if sys.argv[1] == 'list':
+        sys.stdout.write("echo -e \"Listing Environments\\n")
+        for key, env in config.items():
+          sys.stdout.write('%s\\n' % key)
+          sys.stdout.write("  Env Dir: %s\\n" % env['env'])
+          if env.has_key('cd') and env['cd']:
+            sys.stdout.write("  Code Dir: %s\\n" % env['cd'])
+            
+          sys.stdout.write('\\n')
+          
+        sys.stdout.write('"')
+        cmd = 'SKIP'
+        
+      elif sys.argv[1] == 'add' and len(sys.argv) > 2:
         envdir = os.path.join(os.environ['HOME'], 'pyenv')
         if not os.path.exists(envdir):
           os.mkdir(envdir)
@@ -64,8 +77,9 @@ def main ():
           cmd += '; cd ' + env['cd']
           
   if cmd:
-    print cmd
-    
+    if cmd != 'SKIP':
+      print cmd
+      
   else:
     print "echo Invalid environment or command."
     

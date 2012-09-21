@@ -34,3 +34,5 @@ Sample JSON file, note "cd" is optional:
   "proj2": {"env": "/home/user/ENVs/project2", "cd": "/home/user/git/project2"}
 }
 
+List Environments:
+pyenv list
