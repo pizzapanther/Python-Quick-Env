@@ -54,6 +54,14 @@ def main ():
         sys.stdout.write('"')
         cmd = 'SKIP'
         
+      elif sys.argv[1] in ('rm', 'del') and len(sys.argv) == 3:
+        sys.stdout.write("echo -e \"Removing Env: %s\\n" % sys.argv[2])
+        sys.stdout.write('"')
+        
+        cmd = 'rm -rf %s' % config[sys.argv[2]]['env']
+        del config[sys.argv[2]]
+        save_config(config)
+        
       elif sys.argv[1] == 'add' and len(sys.argv) > 2:
         envdir = os.path.join(os.environ['HOME'], 'pyenv')
         if not os.path.exists(envdir):

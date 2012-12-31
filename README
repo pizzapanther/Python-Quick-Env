@@ -36,3 +36,7 @@ Sample JSON file, note "cd" is optional:
 
 List Environments:
 pyenv list
+
+Remove an Environment:
+pyenv rm proj1
+
