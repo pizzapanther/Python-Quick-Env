@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "pyquickenv",
-    version = '12.12',
+    version = '14.04',
     description = "A command line tool to start Python virtual environments faster and easier.",
     url = "https://github.com/pizzapanther/Python-Quick-Env",
     author = "Paul Bailey",
