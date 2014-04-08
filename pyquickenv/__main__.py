@@ -89,8 +89,8 @@ def main ():
           
   if cmd:
     if cmd != 'SKIP':
-      print cmd
+      print(cmd)
       
   else:
-    print "echo Invalid environment or command."
+    print("echo Invalid environment or command.")
     
